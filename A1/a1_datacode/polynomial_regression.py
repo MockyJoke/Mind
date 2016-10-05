@@ -48,6 +48,6 @@ plt.plot(range(1,maxDegree+1), rms_train)
 #----------------------------------
 plt.ylabel('RMS')
 plt.legend(['Test error','Training error'])
-plt.title('Fit with polynomials, no regularization')
+plt.title('Fit with polynomials, no regularization, normalized')
 plt.xlabel('Polynomial degree')
 plt.show()
