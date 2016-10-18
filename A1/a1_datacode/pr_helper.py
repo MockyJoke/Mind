@@ -15,6 +15,14 @@ def GetW(phi, targets):
     w =np.dot(np.linalg.pinv(phi),targets)
     return w
 
+def GetRegW(phi,targets,lmda):
+    product=np.dot(np.transpose(phi),phi)
+    size=np.size(product,1)
+    identity= np.identity(size)
+    t = np.add(np.multiply(lmda,identity),product)
+    w = np.dot(np.dot(np.linalg.inv(t),np.transpose(phi)),targets)
+    return w
+    
 def GetPredictRMS(phi,w,targets):
     predicts= np.dot(np.transpose(w),np.transpose(phi))
     errors=np.subtract(np.transpose(predicts),targets)
