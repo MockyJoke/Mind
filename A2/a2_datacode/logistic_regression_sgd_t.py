@@ -59,7 +59,6 @@ for eta in eta_arr:
             # Compute output using current w on all data X.
             k=np.dot(X[index[i]],w)
             y = sps.expit(k)
-            
             # e is the error, negative log-likelihood (Eqn 4.90)
             e = -np.mean(np.multiply(t[index[i]],np.log(y)) + np.multiply((1-t[index[i]]),np.log(1-y)))
 
@@ -98,11 +97,18 @@ for eta in eta_arr:
 
     # Plot error over iterations
     #plt.figure()
-    plt.plot(e_all,label='{0:f}'.format(eta))
-    plt.ylabel('Negative log likelihood')
-    plt.title('Training logistic regression')
-    plt.xlabel('Epoch')
+    # plt.plot(e_all,label='{0:f}'.format(eta))
+    # plt.ylabel('Negative log likelihood')
+    # plt.title('Training logistic regression')
+    # plt.xlabel('Epoch')
+    plt.figure(DATA_FIG)
+    plt.clf()
+    plt.plot(X1[:,0],X1[:,1],'b.')
+    plt.plot(X2[:,0],X2[:,1],'g.')
+    a2.draw_sep(w)
+    plt.axis([-5, 15, -10, 10])
+    plt.show()
     ws.append(w)
 for k in ws:
     print k
-plt.show()
+#plt.show()
