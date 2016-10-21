@@ -97,7 +97,7 @@ for eta in eta_arr:
     plt.plot(e_all,label='eta = {0:f}'.format(eta))
     plt.legend()
     plt.ylabel('Negative log likelihood')
-    plt.title('Training logistic regression')
+    plt.title('Training logistic regression (GD)')
     plt.xlabel('Epoch')
     ws.append(w)
 for k in ws:

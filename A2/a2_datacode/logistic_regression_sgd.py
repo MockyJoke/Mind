@@ -44,16 +44,17 @@ DATA_FIG = 1
 # plt.ylabel('intercept')
 # plt.axis([-5, 5, -10, 0])
 ws=[]
-add=0.000000000000000000001
+add=0.000000000000001
 for eta in eta_arr:
     # Initialize w.
     w = np.array([0.1, 0, 0])
     size=np.size(X,0)
     # Error values over all iterations.
     e_all = []
+    index=range(size)
+    np.random.shuffle(index)
     for iter in range (0,max_iter):
-        index=range(size)
-        np.random.shuffle(index)
+        
         for i in range (size):
             # Compute output using current w on all data X.
             k=np.dot(X[index[i]],w)
@@ -86,14 +87,14 @@ for eta in eta_arr:
         
         y = sps.expit(np.dot(X,w))
         # e is the error, negative log-likelihood (Eqn 4.90)
-        e = -np.mean(np.multiply(t,np.log(y)) + np.multiply((1-t),np.log(1-y)))
+        e = -np.mean(np.multiply(t,np.log(add+y)) + np.multiply((1-t),np.log(add+1-y)))
         # Add this error to the end of error vector.
         e_all.append(e)
 
         # Stop iterating if error doesn't change more than tol.
-        # if iter>0:
-        #     if np.absolute(e-e_all[iter-1]) < tol:
-        #         break
+        if iter>0:
+            if np.absolute(e-e_all[iter-1]) < tol:
+                break
             
 
     # Plot error over iterations
