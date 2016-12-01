@@ -1,0 +1,5 @@
+index_extract/Debug
+index_extract/Release
+index_extract/out
+*.suo
+*.user
