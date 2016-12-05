@@ -1,5 +1,7 @@
 index_extract/Debug
 index_extract/Release
 index_extract/out
+index_extract/ConsoleApplication1.VC.VC.opendb
+index_extract/ConsoleApplication1.VC.db
 *.suo
 *.user

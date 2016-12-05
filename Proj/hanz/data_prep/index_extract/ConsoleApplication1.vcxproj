@@ -148,10 +148,10 @@
     <ClInclude Include="string_helper.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ExtractImages.cpp" />
+    <None Include="Makefile" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Makefile" />
+    <ClCompile Include="ExtractImages.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
